@@ -87,7 +87,7 @@ export default function FoodForm({ onAdd }) {
           <div className="relative">
             <Search
               size={18}
-              className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-white/25"
+              className="pointer-events-none left-4 top-1/2 z-10 -translate-y-1/2 text-white/25"
             />
             <input
               className="field !pl-11 !pr-11"
