@@ -100,13 +100,11 @@ export default function FoodForm({ onAdd }) {
               placeholder="Search cooked rice, eggs, banana…"
             />
             {loading && (
-              <LoaderCircle
-                size={18}
-                className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 animate-spin text-[#43d6a1]"
-              />
+              <span className="pointer-events-none absolute right-4 top-1/2 flex -translate-y-1/2 items-center justify-center text-[#43d6a1]">
+                <LoaderCircle size={18} className="animate-spin" />
+              </span>
             )}
           </div>
-
           {results.length > 0 && (
             <div className="absolute left-0 right-0 top-[72px] z-20 max-h-64 overflow-auto rounded-xl border border-white/10 bg-[#111319] p-2 shadow-2xl">
               {results.map((food) => (
@@ -130,7 +128,9 @@ export default function FoodForm({ onAdd }) {
           )}
         </label>
 
-        {error && <p className="text-sm text-[#ff8c72] sm:col-span-2">{error}</p>}
+        {error && (
+          <p className="text-sm text-[#ff8c72] sm:col-span-2">{error}</p>
+        )}
 
         <label className="field-label">
           Quantity (g)
