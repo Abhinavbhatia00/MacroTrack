@@ -5,10 +5,12 @@ export default function Header({ user, authReady, onLogin, onLogout }) {
     <header className="sticky top-0 z-30 border-b border-white/[.06] bg-[#0d0f14]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-8">
         <a href="#dashboard" className="flex items-center gap-3 font-bold">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#43d6a1] text-[#0e1714]">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#43d6a1] text-[#0e1714]">
             <Activity />
           </span>
-          Macro<span className="text-[#43d6a1]">Track</span>
+          <span className="whitespace-nowrap">
+            Macro <span className="text-[#43d6a1]">Track</span>
+          </span>
         </a>
 
         <nav className="hidden gap-6 text-sm text-white/45 md:flex">
@@ -32,7 +34,10 @@ export default function Header({ user, authReady, onLogin, onLogout }) {
         )}
 
         {authReady && !user && (
-          <button onClick={onLogin} className="flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-bold text-black">
+          <button
+            onClick={onLogin}
+            className="flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-bold text-black"
+          >
             <UserRound size={17} />
             Log in
           </button>
